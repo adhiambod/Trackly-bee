@@ -29,7 +29,7 @@ README File for Trackly-Bee
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/trackly-bee.git
+   git clone https://github.com/adhiambod/Trackly-bee.git
    cd trackly-bee
 Install the necessary dependencies:
 
