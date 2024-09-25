@@ -1,4 +1,3 @@
-README File for Trackly-Bee
 
 # Trackly-Bee
 
