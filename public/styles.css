@@ -1,0 +1,114 @@
+body {
+    background-image: url('images/Expense Tracker Dashboard.jpeg'); /* Background image */
+    background-size: cover; /* Cover the entire page */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-position: center center; /* Center the image */
+    color: #000000; /* Black text for general content */
+    font-family: 'Poppins', sans-serif; /* Friendly font */
+    margin: 0;
+    padding: 0;
+}
+
+#loading-screen {
+    position: fixed; /* Cover the entire screen */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black; /* Black background for loading screen */
+    display: flex; /* Center logo */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+#loading-logo {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height to cover the loading screen */
+    object-fit: contain; /* Maintain aspect ratio */
+    animation: fadeIn 1s ease-in-out; /* Animation for logo */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+header {
+    background-color: #FFC107; /* Warm yellow for header */
+    padding: 20px;
+    text-align: center;
+}
+
+#welcome-message {
+    animation: move 5s linear infinite; /* Continuous movement */
+}
+
+@keyframes move {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-20px); }
+    100% { transform: translateX(0); }
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #343A40; /* Soft black text */
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    color: #FFC107; /* Warm yellow for section headings */
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px; /* Rounded edges */
+    background-color: rgba(210, 180, 140, 0.9); /* Light brown background for sections */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #343A40; /* Dark footer background */
+    color: white;
+}
+
+.card {
+    background-color: #FFF; /* Card background */
+    border-radius: 15px; /* Rounded edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none; /* Class to hide elements */
+}
+
+/* New Styles for the Specific Text Section */
+.info-section {
+    background-color: rgba(165, 42, 42, 0.7); /* Semi-transparent light brown background */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px 0; /* Add some spacing around */
+    color: #000000; /* Ensure text remains readable */
+    font-size: 16px; /* Adjust text size for readability */
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>User Profile - Trackly-Bee</title>
+</head>
+<body>
+    <header>
+        <h1>Trackly-Bee User Profile</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li id="viewExpenseLink" class="hidden"><a href="view_expense.html">View Expenses</a></li>
+                <li id="addExpenseLink" class="hidden"><a href="add_expense.html">Add Expense</a></li>
+                <li id="editExpenseLink" class="hidden"><a href="edit_expense.html">Edit Expense</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="greeting"></section>
+        <section id="profile-pic">
+            <h2>Upload Profile Picture</h2>
+            <label for="profilePicInput">Choose a picture:</label>
+            <input type="file" id="profilePicInput" accept="image/*">
+            <img id="profilePicPreview" class="profile-pic-preview" src="#" alt="Profile Picture Preview">
+        </section>
+        <section id="spending-chart">
+            <h2>Your Spending Habits</h2>
+            <canvas id="spendingChart"></canvas>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Trackly-Bee. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Greet user based on time of day
+        const greetUser = () => {
+            const now = new Date();
+            const hour = now.getHours();
+            let greeting = "Hello!";
+            if (hour < 12) greeting = "Good Morning!";
+            else if (hour < 18) greeting = "Good Afternoon!";
+            else greeting = "Good Evening!";
+            document.getElementById('greeting').innerText = greeting;
+        };
+
+        // Profile picture upload
+        document.getElementById('profilePicInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.getElementById('profilePicPreview');
+                    img.src = e.target.result;
+                    img.style.display = 'block'; // Show the preview
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Initialize greeting
+        greetUser();
+
+        // Code for rendering spending habits chart goes here...
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+    <title>Trackly-Bee</title>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <img id="loading-logo" src="public/images/TracklyBee.png" alt="Trackly-Bee Logo">
+    </div>
+
+    <header>
+        <h1 id="welcome-message" class="animated-welcome">
+            Welcome to Trackly-Bee <span class="bee-emoji">🐝</span>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li id="viewExpenseLink" class="hidden"><a href="view_expense.html">View Expenses</a></li>
+                <li id="addExpenseLink" class="hidden"><a href="add_expense.html">Add Expense</a></li>
+                <li id="editExpenseLink" class="hidden"><a href="edit_expense.html">Edit Expense</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="about-us">
+            <h2>Welcome to Trackly-Bee, where managing your money is as sweet and organized as a beehive.</h2>
+            <p>Track your expenses effortlessly with our easy-to-use expense tracker.</p>
+            <p>Register now to manage your finances effectively.</p>
+            <ul>
+                <li>Easy tracking of expenses</li>
+                <li>Detailed Reports</li>
+                <li>Secure and Private</li>
+                <li>Mobile Friendly</li>
+                <li>Customizable Categories</li>
+            </ul>
+        </section>
+
+        <section id="expenses">
+            <h2>Your Expenses</h2>
+            <div id="expensesList"></div> <!-- Container for displaying expenses -->
+        </section>
+        
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>For any queries or support, feel free to contact us:</p>
+            <p>Phone: +254 701 587 310</p>
+            <p>Email: info@tracklybee.co.ke</p>
+            <p>© 2024 Copyright | Privacy notice | Terms of use</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Trackly-Bee. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:3000/api';
+
+        // Check if user is logged in
+        const token = localStorage.getItem('token');
+        if (token) {
+            document.getElementById('viewExpenseLink').classList.remove('hidden'); // Show View Expenses link
+            document.getElementById('addExpenseLink').classList.remove('hidden'); // Show Add Expense link
+            document.getElementById('editExpenseLink').classList.remove('hidden'); // Show Edit Expense link
+        }
+
+        // Function to fetch and display expenses
+        const fetchExpenses = async () => {
+            try {
+                const response = await fetch(`${API_BASE_URL}/expenses`); // Adjust endpoint as needed
+                const expenses = await response.json();
+                
+                // Display expenses in the expensesList div
+                const expensesList = document.getElementById('expensesList');
+                expensesList.innerHTML = ''; // Clear previous content
+                
+                if (expenses.length > 0) {
+                    expenses.forEach(expense => {
+                        const expenseItem = document.createElement('div');
+                        expenseItem.textContent = `${expense.description}: $${expense.amount}`;
+                        expensesList.appendChild(expenseItem);
+                    });
+                } else {
+                    expensesList.textContent = 'No expenses found.';
+                }
+            } catch (error) {
+                console.error('Error fetching expenses:', error);
+            }
+        };
+
+        // Hide loading screen and show content after a delay
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading-screen').style.display = 'none'; // Hide loading screen
+                fetchExpenses(); // Fetch expenses once the app is loaded
+            }, 2000); // 2 seconds delay
+        });
+
+        // Scroll to the contact section when clicked
+        const contactLink = document.createElement('a');
+        contactLink.textContent = "Contact Us";
+        contactLink.href = "#contact"; // Link to the contact section
+        contactLink.onclick = (event) => {
+            event.preventDefault(); // Prevent default anchor behavior
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to contact
+        };
+        document.getElementById('contact').appendChild(contactLink);
+    </script>
+</body>
+</html>
