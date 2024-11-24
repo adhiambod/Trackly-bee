@@ -1,72 +1,73 @@
+Trackly-Bee
+Trackly-Bee is your personal finance tracker that makes budgeting fun and engaging. With a bee-themed design, it simplifies managing your finances and helps you stay on top of your spending goals.
 
-# Trackly-Bee
+Table of Contents
+Features
+Technologies Used
+Installation
+Usage
+Contributing
+License
+Features
+User-Friendly Interface: Designed to be intuitive and easy to navigate.
+Expense Tracking: Log and categorize your expenses effortlessly.
+Budgeting: Set and track your budgets across different categories.
+Reports: Monthly summaries and visual representations of your financial status.
+Notifications: Get reminders to keep you within your budget.
+Technologies Used
+Frontend: HTML, CSS, JavaScript
+Backend: Node.js, Express
+Database: MongoDB with Mongoose ODM
+Authentication: JSON Web Tokens (JWT) for secure user sessions
+Environment Variables: .env file for sensitive information
+Installation
+Clone the repository:
 
-**Trackly-Bee** is your personal finance tracker that makes budgeting fun and engaging. With a bee-themed design, it simplifies managing your finances and helps you stay on top of your spending goals. 
-
-## Table of Contents
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Features
-- **User-Friendly Interface**: Designed to be intuitive and easy to navigate.
-- **Expense Tracking**: Log and categorize your expenses effortlessly.
-- **Budgeting**: Set and track your budgets across different categories.
-- **Reports**: Monthly summaries and visual representations of your financial status.
-- **Notifications**: Get reminders to keep you within your budget.
-
-## Technologies Used
-- **Frontend**: HTML, CSS
-- **Backend**: Node.js, Express
-- **Database**: Sequelize ORM with a SQL-based database
-- **Authentication**: JSON Web Tokens (JWT) for secure user sessions
-- **Environment Variables**: .env file for sensitive information
-
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/adhiambod/Trackly-bee.git
-   cd trackly-bee
+bash
+Copy code
+git clone https://github.com/adhiambod/Trackly-bee.git
+cd trackly-bee
 Install the necessary dependencies:
 
 bash
-
+Copy code
 npm install
 Create a .env file and add your database configuration:
-makefile
+
+plaintext
 Copy code
-DB_USERNAME=root
-DB_PASSWORD=yourpassword
-DB_NAME=expense_tracker
-DB_HOST=127.0.0.1
+MONGO_URI=mongodb+srv://<username>:<password>@<cluster-url>/<database-name>?retryWrites=true&w=majority
 JWT_SECRET=yourjwtsecret
+PORT=3000
 Start the server:
 
 bash
-
-node server.mjs
+Copy code
+npm start
 Usage
-Access the application in your browser at http://localhost:3000.
-Use the app to set budgets, track expenses, and generate reports.
+Open your browser and navigate to:
+plaintext
+Copy code
+http://localhost:3000
+Use the app to:
+Set budgets
+Track expenses
+Generate financial reports
 Contributing
 We welcome contributions! To contribute:
 
 Fork the repository.
 Create a new branch:
-
 bash
-
+Copy code
 git checkout -b feature/YourFeature
 Make your changes and commit them:
 bash
-
+Copy code
 git commit -m "Add some feature"
 Push to the branch:
 bash
-
+Copy code
 git push origin feature/YourFeature
 Submit a pull request.
 License
