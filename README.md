@@ -13,67 +13,74 @@ Trackly-Bee
 - [License](#license)
 
 ## Features
-- **User-Friendly Interface**: Designed to be intuitive and easy to navigate.
-- **Expense Tracking**: Log and categorize your expenses effortlessly.
-- **Budgeting**: Set and track your budgets across different categories.
-- **Reports**: Monthly summaries and visual representations of your financial status.
-- **Notifications**: Get reminders to keep you within your budget.
 
-## Technologies Used
-- **Frontend**: HTML, CSS
-- **Backend**: Node.js, Express
-- **Database**: Sequelize ORM with a SQL-based database
-- **Authentication**: JSON Web Tokens (JWT) for secure user sessions
-- **Environment Variables**: .env file for sensitive information
 
-## Installation
-1. Clone the repository:
-   
-   git clone https://github.com/adhiambod/Trackly-bee.git
-   cd trackly-bee
-Install the necessary dependencies:
+**User-Friendly Interface: Designed to be intuitive and easy to navigate.
+
+**Expense Tracking: Log and categorize your expenses effortlessly.
+
+**Budgeting: Set and track your budgets across different categories.
+
+**Reports: Monthly summaries and visual representations of your financial status.
+
+**Notifications: Get reminders to keep you within your budget.
+
+##Technologies Used
+
+**Frontend: HTML, CSS, JavaScript **Backend: Node.js, Express **Database: MongoDB with Mongoose ODM **Authentication: JSON Web Tokens (JWT) for secure user sessions **Environment Variables: .env file for sensitive information
+
+##Installation 
+
+Clone the repository:
+
 bash
 
-npm install
-Create a .env file and add your database configuration:
-makefile
+git clone https://github.com/adhiambod/Trackly-bee.git cd trackly-bee Install the necessary dependencies:
 
+bash
 
-DB_USERNAME=root
-DB_PASSWORD=yourpassword
-DB_NAME=expense_tracker
-DB_HOST=127.0.0.1
-JWT_SECRET=yourjwtsecret
-Start the server:
+npm install Create a .env file and add your database configuration:
 
+plaintext
 
-on bash
+MONGO_URI=mongodb+srv://:@/?retryWrites=true&w=majority JWT_SECRET=yourjwtsecret PORT=3000 Start the server:
 
-node server.mjs
-Usage
-Access the application in your browser at http://localhost:3000.
-Use the app to set budgets, track expenses, and generate reports.
+bash
+
+npm start
+
+##Usage
+
+Open your browser and navigate to:
+
+http://localhost:3000
+
+Use the app to:
+
+**Set budgets *Track expenses *Generate financial reports
+
 Contributing
-We welcome contributions! To contribute:
 
-Fork the repository.
-Create a new branch:
-bash
+##We welcome contributions! To contribute:
 
+**Fork the repository.
 
-git checkout -b feature/YourFeature
-Make your changes and commit them:
+**Create a new branch:
 
-bash
+bash git checkout -b feature/YourFeature
 
-git commit -m "Add some feature"
-Push to the branch:
+**Make your changes and commit them:
 
-bash
+bash git commit -m "Add some feature"
 
-git push origin feature/YourFeature
-Submit a pull request.
-License
+**Push to the branch:
+
+bash git push origin feature/YourFeature
+
+**Submit a pull request.
+
+##License 
+
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 Thank you for considering Trackly-Bee! Together, let’s make financial management as sweet as honey! 🐝
